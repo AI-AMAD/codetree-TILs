@@ -6,4 +6,4 @@ def hello_world(n):
     hello_world(n-1)
     print("HelloWorld")
 
-hello_world(4)
+hello_world(n)
