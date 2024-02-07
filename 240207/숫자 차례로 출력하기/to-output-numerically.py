@@ -14,4 +14,5 @@ def b(n):
 
 
 a(n)
+print()
 b(n)
