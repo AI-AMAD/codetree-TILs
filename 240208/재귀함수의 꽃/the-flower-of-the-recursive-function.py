@@ -6,3 +6,5 @@ def print_count(n):
     print(n, end=' ')
     print_count(n-1)
     print(n, end=' ')
+
+print_count(n)
