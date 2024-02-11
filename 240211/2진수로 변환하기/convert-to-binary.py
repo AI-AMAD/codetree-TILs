@@ -2,7 +2,7 @@ n = int(input())
 result = []
 
 def recur(n):
-    if n == 1:
+    if n <= 1:
         result.append(n)
         return
     else:
