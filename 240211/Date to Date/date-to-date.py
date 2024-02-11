@@ -13,6 +13,6 @@ for i in range(1, m2+1):
 b += d2
 
 if m1 == m2:
-    a+=1
+    b+=1
 
 print(b-a)
