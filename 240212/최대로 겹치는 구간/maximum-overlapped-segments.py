@@ -5,7 +5,7 @@ for i in range(n):
     x1, x2 = map(int, input().split())
     x1 += 100
     x2 += 100
-    for j in range(x1, x2-1):
+    for j in range(x1, x2):
         numbers[j] += 1
 
 print(max(numbers))
