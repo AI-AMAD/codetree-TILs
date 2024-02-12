@@ -1,5 +1,5 @@
 n = int(input())
-numbers = [0 for i in range(n+1)]
+numbers = [0 for i in range(101)]
 
 for i in range(n):
     x1, x2 = map(int, input().split())
