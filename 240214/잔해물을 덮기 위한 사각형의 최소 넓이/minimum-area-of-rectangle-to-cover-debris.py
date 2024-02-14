@@ -6,27 +6,28 @@ board = [
 off_set = 1000
 first_rect_y1_x1_y2_x2=[]
 
-def max_width(y1, x1, y2, x2):
-  width_1 = 0
-  width_2 = 0
-  for i in range(x1, x2):
-    if board[y1][i] == 1:
-      width_1 += 1
-  for i in range(x1, x2):
-    if board[y2-1][i] == 1:
-      width_2 += 1
-  return max(width_1, width_2)
+def max_width(new_board):
+  max_width = 0
+  for width in new_board:
+    if width[0] == width[-1]:
+      max_width = len(width)
+      return max_width
+    else:
+      temp = 0
+      for i in width:
+        if i == 1:
+          temp += 1
+        max_width = max(max_width, temp)
+  return max_width
 
-def max_length(y1, x1, y2, x2):
-  length_1 = 0
-  length_2 = 0 
-  for i in range(y1, y2):
-    if board[i][x1] == 1:
-      length_1 += 1
-  for i in range(y1, y2):
-    if board[i][x2-1] == 1:
-      length_2 += 1
-  return max(length_1, length_2)
+def change_list(list_):
+  changed_list = []
+  for y in range(len(list_[0])):
+    shallow = []
+    for x in range(len(list_)):
+      shallow.append(list_[x][y])
+    changed_list.append(shallow)
+  return changed_list
 
 for i in range(n):
   y1, x1, y2, x2 = map(int, input().split())
@@ -47,6 +48,17 @@ y1+=off_set
 x1+=off_set
 y2+=off_set
 x2+=off_set
-width = max_width(y1, x1, y2, x2)
-length = max_length(y1, x1, y2, x2)
+
+new_board =[]
+for y in range(y1, y2):
+  shallow = []
+  for x in range(x1, x2):
+    shallow.append(board[y][x])
+  new_board.append(shallow)
+
+new_board_2 = change_list(new_board)
+
+width = max_width(new_board)
+length = max_width(new_board_2)
+
 print(width*length)
