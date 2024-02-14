@@ -1,9 +1,9 @@
 n = 2
 board = [
-  [0]*15
-  for _ in range(15)
+  [0]*2000
+  for _ in range(2000)
 ]
-off_set = 3
+off_set = 1000
 first_rect_y1_x1_y2_x2=[]
 
 def max_width(y1, x1, y2, x2):
