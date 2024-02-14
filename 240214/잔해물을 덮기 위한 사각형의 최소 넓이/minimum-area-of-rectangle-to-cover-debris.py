@@ -9,7 +9,7 @@ first_rect_y1_x1_y2_x2=[]
 def max_width(new_board):
   max_width = 0
   for width in new_board:
-    if width[0] == width[-1]:
+    if width[0] == 1 and width[-1] == 1:
       max_width = len(width)
       return max_width
     else:
