@@ -47,4 +47,7 @@ for a, b in zip(a_arr, b_arr):
   if winner_changed_check(a, b):
     result += 1
 
-print(result-1)
+if result == 0:
+  print(result)
+else:
+  print(result-1)
