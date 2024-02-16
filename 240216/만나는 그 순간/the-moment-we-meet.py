@@ -21,7 +21,7 @@ for i, (direction, move_count) in enumerate(move, start=1):
         a_arr.append(a_current-count)
     a_current = a_arr[-1]
 
-  elif i >= m:
+  elif i > n:
     move_count = int(move_count)
     for count in range(1, move_count+1):
       if direction == "R":
