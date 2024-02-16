@@ -23,13 +23,15 @@ def winner_changed_check(a, b):
     else:
       winner = temp
       return True
-  else:
+  elif a < b:
     temp = "b"
     if winner == temp:
       return False
     else:
       winner = temp
       return True
+  elif a == b:
+    return False
 
 for i, (speed, time) in enumerate(information):
   if i < n:
