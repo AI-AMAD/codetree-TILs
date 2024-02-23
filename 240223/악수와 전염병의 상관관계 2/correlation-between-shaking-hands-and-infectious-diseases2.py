@@ -1,6 +1,6 @@
 developer_count, possible_infection, first_corona_developer, handshake_count = map(int, input().split())
 informations = [ 
-  [0] * 0 for i in range(8)
+  [0] * 0 for i in range(251)
 ]
 
 for _ in range(handshake_count):
