@@ -3,13 +3,12 @@ y, x, direction = input().split()
 
 y = int(y)-1
 x = int(x)-1
-
 board = [ 
   [0]*n
   for _ in range(n)
 ]
 
-dys = [0, -1, 1, 0]
+dys = [0, 1, -1, 0]
 dxs = [1, 0, 0, -1]
 
 direction_map = {
