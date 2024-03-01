@@ -3,7 +3,7 @@ y, x, direction = input().split()
 
 y = int(y)-1
 x = int(x)-1
-print(direction)
+
 board = [ 
   [0]*n
   for _ in range(n)
