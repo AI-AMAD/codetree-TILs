@@ -14,9 +14,11 @@ for i in range(1, end):
     target[i] = '1'
     temp = change_to_decimal(target)
     result = max(temp, result)
+    target[i] = '0'
   elif target[i] == '1':
     target[i] = '0'
     temp = change_to_decimal(target)
     result = max(temp, result)
+    target[i] = '1'
 
 print(result)
