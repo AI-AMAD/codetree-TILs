@@ -1,22 +1,27 @@
 import sys
 
+INT_MAX = sys.maxsize
+
+# 변수 선언 및 입력
 n = int(input())
-room = [ 
-  int(input())
-  for _ in range(n)
+arr = [
+	int(input())
+	for _ in range(n)
 ]
 
-result = sys.maxsize
+min_dist = INT_MAX
+# i번째 방에서 출발했을 경우의 결과를 구해줍니다.
+for i in range(n):
+	sum_dist = 0
+	for j in range(n):
+    if j >= i:
+      	dist = j-i
+		sum_dist += dist * arr[j]
+    elif i > j:
+      	dist = n-i-j
+      	sum_dist += dist * arr[j]
+	
+	# 가능한 거리의 합 중 최솟값을 구해줍니다.
+	min_dist = min(min_dist, sum_dist)
 
-def change_room(c_room):
-  c_room.append(c_room.pop(0))
-  return c_room
-
-for _ in range(n):
-  room = change_room(room)
-  temp = 0
-  for i, j in zip(room, range(n)):
-    temp += i*j
-  result = min(result, temp)
-
-print(result)
+print(min_dist)
