@@ -4,7 +4,7 @@ result = 0
 
 for i in range(1, end):
   if n[i] == '(' and n[i-1] == '(':
-    for j in range(1, end):
+    for j in range(i, end):
       if n[j] == ')' and n[j-1] == ')':
         result += 1
 
