@@ -6,17 +6,17 @@ board = [
 result = []
 flag = False
 
-def in_range_garo(i, j):
-  return i<15
-
-def in_range_sero_and_dialogue_up(i, j):
+def in_range_garo_and_dialogue_up(i, j):
   return j<15
+
+def in_range_sero(i, j):
+  return i<15
 
 def in_range_dialogue_down(i, j):
   return i<15 and j<15
 
 def garo_check(i, j):
-  if in_range_garo(i, j):
+  if in_range_garo_and_dialogue_up(i, j):
     if board[i][j] == board[i][j+1] == board[i][j+2] == board[i][j+3] == board[i][j+4]:
       return True
     else:
@@ -25,7 +25,7 @@ def garo_check(i, j):
     return False
 
 def sero_check(i, j):
-  if in_range_sero_and_dialogue_up(i, j):
+  if in_range_sero(i, j):
     if board[i][j] == board[i+1][j] == board[i+2][j] == board[i+3][j] == board[i+4][j]:
       return True
     else:
@@ -43,7 +43,7 @@ def dialogue_check_down(i, j):
     return False
 
 def dialogue_check_up(i, j):
-  if in_range_sero_and_dialogue_up(i, j):
+  if in_range_garo_and_dialogue_up(i, j):
     if board[i][j] == board[i-1][j+1] == board[i-2][j+2] == board[i-3][j+3] == board[i-4][j+4]:
       return True
     else:
