@@ -9,14 +9,20 @@ flag = False
 def garo_check(i, j):
   if board[i][j] == board[i][j+1] == board[i][j+2] == board[i][j+3] == board[i][j+4]:
     return True
+  else:
+    return False
 
 def sero_check(i, j):
   if board[i][j] == board[i+1][j] == board[i+2][j] == board[i+3][j] == board[i+4][j]:
     return True
+  else:
+    return False
 
 def dialogue_check(i, j):
   if board[i][j] == board[i+1][j+1] == board[i+2][j+2] == board[i+3][j+3] == board[i+4][j+4]:
     return True
+  else:
+    return False
 
 def check(i, j):
   if board[i][j] == 1: 
