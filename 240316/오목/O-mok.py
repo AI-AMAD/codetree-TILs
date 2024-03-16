@@ -108,5 +108,8 @@ for i in range(19):
       flag = True
       break
 
-print(result[0])
-print(result[1], result[2])
+if result:
+  print(result[0])
+  print(result[1], result[2])
+else:
+  print(0)
