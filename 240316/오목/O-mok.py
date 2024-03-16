@@ -7,46 +7,46 @@ result = []
 flag = False
 
 def garo_check(i, j):
-  number = board[i][j] + board[i][j+1] + board[i][j+2] +board[i][j+3] + board[i][j+4] 
-  return number
+  if board[i][j] == board[i][j+1] == board[i][j+2] == board[i][j+3] == board[i][j+4]:
+    return True
 
 def sero_check(i, j):
-  number = board[i][j] + board[i+1][j] + board[i+2][j] + board[i+3][j] + board[i+4][j]  
-  return number
+  if board[i][j] == board[i+1][j] == board[i+2][j] == board[i+3][j] == board[i+4][j]:
+    return True
 
 def dialogue_check(i, j):
-  number = board[i][j] + board[i+1][j+1] + board[i+2][j+2] + board[i+3][j+3] + board[i+4][j+4]  
-  return number
+  if board[i][j] == board[i+1][j+1] == board[i+2][j+2] == board[i+3][j+3] == board[i+4][j+4]:
+    return True
 
 def check(i, j):
   if board[i][j] == 1: 
-    if garo_check(i, j) == 5:
+    if garo_check(i, j):
       result.append(board[i][j])
       result.append(i+1)
       result.append(j+3)
       return result
-    elif sero_check(i, j) == 5:
+    elif sero_check(i, j):
       result.append(board[i][j])
       result.append(i+3)
       result.append(j+1)
       return result
-    elif dialogue_check(i, j) == 5:
+    elif dialogue_check(i, j):
       result.append(board[i][j])
       result.append(i+3)
       result.append(j+3)
       return result
   elif board[i][j] == 2:
-    if garo_check(i, j) == 10:
+    if garo_check(i, j):
       result.append(board[i][j])
       result.append(i+1)
       result.append(j+3)
       return result
-    elif sero_check(i, j) == 10:
+    elif sero_check(i, j):
       result.append(board[i][j])
       result.append(i+3)
       result.append(j+1)
       return result
-    elif dialogue_check(i, j) == 10:
+    elif dialogue_check(i, j):
       result.append(board[i][j])
       result.append(i+3)
       result.append(j+3)
